@@ -21,48 +21,16 @@
     padding-right: 20%;
   }
 
-  .box { 
-    text-align: center;
-    max-width: 100%;
-  }
 
-  hr { 
-    border-radius: 5%;
-  }
-
-  h2 {
-    font-weight: 700;
-    font-size: large;
-    color: black;
-  }
-
-  .container > button {
-    margin-right: 2%;
-    margin-top: 5%;
-  }
 </style>
 
 <script>
-  import { onMount } from "svelte";
+  import Question from "../components/question.svelte";
+  import Bottle from "../components/bottle.svelte";
 
-  let title = "Truth Or Dare"
-  let currentText = "Welcome to the Truth or Dare game";
-  var dares = [];
-  onMount(() => {
-
-  });
 </script>
 
 <div class="container">
-
-  <div class="box">
-    <h2>{title}</h2>
-    <hr>
-    <p>{currentText}</p>
-    <div class="container">    
-      <button class="button is-primary">Truth</button>
-      <button class="button is-info">Skip</button>
-      <button class="button is-warning" style="margin-right: 0">Dare</button>
-    </div>
-  </div>
+  <Question />
+  <Bottle />
 </div>

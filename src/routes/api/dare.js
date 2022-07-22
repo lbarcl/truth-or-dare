@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { truthModel } from '../../database/turthscheme';
+import { dareModel } from '../../database/darescheme';
 import URL from 'url';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
@@ -7,7 +7,7 @@ export async function GET({ request }) {
   //console.log('Connecting to db');
   await mongoose.connect(process.env.db_url)
   //console.log('Connected to db', 'Getting random question');
-  const truth = await truthModel.aggregate([
+  const dare = await dareModel.aggregate([
     {
       '$sample': {
         'size': 1
@@ -20,7 +20,7 @@ export async function GET({ request }) {
 
   const url = URL.parse(request.url, true)
   url.pathname = url.path = '/api/sentence';
-  url.query = { 'windex': truth.map(x => x.words).join(',') }
+  url.query = { 'windex': dare.map(x => x.words).join(',') }
   //console.log(truth.map(x => x.words).join(','))
 
   //console.log('Converting truth words to sentence', URL.format(url));
