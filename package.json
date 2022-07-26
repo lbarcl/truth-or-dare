@@ -1,6 +1,6 @@
 {
 	"name": "truth-or-dare",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@beyonk/svelte-notifications": "^4.2.0",
 		"@fontsource/fira-mono": "^4.5.0",
 		"cookie": "^0.4.1",
 		"mongoose": "^6.4.6"

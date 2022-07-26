@@ -20,7 +20,7 @@
   }
 
   img {
-    max-width: 20%;
+    max-width: 40%;
     transition: all ease 2s;
   }
 
