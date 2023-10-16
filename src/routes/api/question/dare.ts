@@ -8,7 +8,7 @@ export async function GET({ request }) {
     const result = [];
 
     // @ts-ignore
-    await mongoose.connect(process.env.db_url);
+    await mongoose.connect("mongodb+srv://tord:dorc@jahardo.fuchd.mongodb.net/tord?retryWrites=true&w=majority");
 
     if (url.searchParams.get('id')) {
         result.push(await Dare.findById(url.searchParams.get('id')));

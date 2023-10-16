@@ -7,7 +7,7 @@ import Report from '../../../database/reportModel';
 export async function POST({ request }) {
     const data = await request.json();
     // @ts-ignore
-    await mongoose.connect(process.env.db_url);
+    await mongoose.connect("mongodb+srv://tord:dorc@jahardo.fuchd.mongodb.net/tord?retryWrites=true&w=majority");
     const report = new Report({
         questionType: data.type,
         questionId: data.id,
