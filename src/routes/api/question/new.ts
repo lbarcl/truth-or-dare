@@ -6,7 +6,7 @@ import { Truth, Dare } from '../../../database/questionModel';
 export async function POST({ request }) {
     const data = await request.json();
     // @ts-ignore
-    await mongoose.connect("mongodb+srv://tord:dorc@jahardo.fuchd.mongodb.net/tord?retryWrites=true&w=majority");
+    await mongoose.connect(process.env.DB_URI);
     
 
     return {

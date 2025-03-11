@@ -10,7 +10,8 @@ export async function GET({ request }) {
         const wordindexs = url.searchParams.get('windex')?.split(',').map(w => parseInt(w));
 
         if (wordindexs) {
-            await mongoose.connect("mongodb+srv://tord:dorc@jahardo.fuchd.mongodb.net/tord?retryWrites=true&w=majority");
+            //@ts-ignore
+            await mongoose.connect(process.env.DB_URI);
             const words = await wordModel.find({ '_id': {$in: wordindexs } });
 
             let sentence = '';
